@@ -1,0 +1,30 @@
+model_type: ResNet
+epochs: 200
+batch_size: 128
+model_b_epochs: 200
+sparse_epochs: 200
+num_workers: 8
+init_weights: False
+project: rohan_pretrain_resnet20_cifar10
+entity: ucalgary
+dataset: cifar10
+dataset_root: 
+  cifar10: /scratch/rjain/cifar10
+  cifar100: /scratch/rjain/cifar100
+optimizer:
+  type: SGD
+  sparse_lr: 0.02
+  lr: 0.08
+  momentum: 0.9
+  weight_decay: 0.0005
+pruning:
+  sparsity: 0.80
+  prune_perc: 0.2
+  prune_epochs: 5000
+  prune_lr: 0.01
+  train_epochs_per_prune: 50
+  tolerance_vgg11: 0.0000005
+  tolerance_resnet20: 0.005
+device: cuda
+width_multiplier: 4
+save_path: /scratch/rjain/resnet/

@@ -1,4 +1,24 @@
-# sparse-rebasin
+# Sparse Training from Random Initialization: Aligning Lottery Ticket Masks using Weight Symmetry
+
+This is the code repository for the paper "Sparse Training from Random Initialization: Aligning Lottery Ticket Masks using Weight Symmetry", [accepted at ICML 2025](https://openreview.net/forum?id=BnfJSwtHLu), and available on arXiv at http://arxiv.org/abs/2505.05143.
+
+## Citing our work
+
+If you find this code useful, please cite our work with the following BibTex citation:
+
+```
+@inproceedings{mohammed2025sparsetraining,
+  author = {Adnan, Mohammed and Jain, Rohan and Sharma, Ekansh and Krishnan, Rahul and Ioannou, Yani},
+  title = {Sparse Training from Random Initialization: Aligning Lottery Ticket Masks using Weight Symmetry},
+  booktitle = {Forty-second International Conference on Machine Learning (ICML)},
+  year = {2025},
+  arxivid = {2505.05143},
+  eprint = {2505.05143},
+  eprinttype = {arXiv},
+  venue = {{Vancouver, BC, Canada}},
+  eventdate = {2025-07-13/2025-07-19},
+}
+```
 
 Setup
 -----

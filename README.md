@@ -6,7 +6,7 @@ This is the code repository for the paper "Sparse Training from Random Initializ
 
 If you find this code useful, please cite our work with the following BibTex citation:
 
-```
+```bibtex
 @inproceedings{mohammed2025sparsetraining,
   author = {Adnan, Mohammed and Jain, Rohan and Sharma, Ekansh and Krishnan, Rahul and Ioannou, Yani},
   title = {Sparse Training from Random Initialization: Aligning Lottery Ticket Masks using Weight Symmetry},

@@ -68,10 +68,15 @@ We recommend running experiments/installing requirements in a python virtual env
 
 ## Usage
 
-To run experiments, setup your experiment and then simply execute in `experiment.py` script with Python, ensuring that the desired settings are specified in the `config.yaml` file. 
+To run experiments for ResNet20 and VGG11 on CIFAR-10/100, setup your experiment and then simply execute in `experiment.py` script with Python, ensuring that the desired settings are specified in the `configs` and `configs_cifar100` folders for CIFAR-10 and CIFAR-100 respectively. 
 
 To run the experiment after setup:
 
+Part 1: Dense training, Pruning, and Permutation Matching.
 ```
-python experiment.py
+python experiment.py -config <FILE_NAME> -seed <INT> -pretrain True
+```
+Part 2: Sparse training LTH, Naive, and the Permuted solutions.
+```
+python experiment.py -config <FILE_NAME> -seed <INT> -pretrain False --rewind <INT>
 ```

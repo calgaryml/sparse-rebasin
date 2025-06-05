@@ -68,7 +68,7 @@ We recommend running experiments/installing requirements in a python virtual env
 
 ## Usage
 
-To run experiments for ResNet20 and VGG11 on CIFAR-10/100, setup your experiment and then simply execute in `experiment.py` script with Python, ensuring that the desired settings are specified in the `configs` and `configs_cifar100` folders for CIFAR-10 and CIFAR-100 respectively. 
+To run experiments for ResNet20 and VGG11 on CIFAR-10/100, this process is involved in two parts. First ensure that the desired settings are specified in the relative `.yaml` from `configs` and `configs_cifar100` folders for CIFAR-10 and CIFAR-100 (depending which experiment you are running). 
 
 To run the experiment after setup:
 

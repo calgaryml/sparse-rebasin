@@ -6,27 +6,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.init as init
 import torchvision.models
-import yaml
 
 dataset_num_classes = {
     'cifar10': 10,
     'cifar100': 100
-}
-
-with open('config.yaml', 'r') as file:
-    config = yaml.safe_load(file)
-    
-dataset_num_classes = {
-    'cifar10': 10,
-    'cifar100': 100
-}
-
-
-cfg = {
-    "VGG11": {
-        "layers": [64, "M", 128, "M", 256, 256, "M", 512, 512, "M", 512, 512, "M"],
-        "num_classes": dataset_num_classes.get(config['dataset'], 10) 
-    }
 }
 
 cfg = {
@@ -36,10 +19,10 @@ cfg = {
 }
 
 class VGG11_nofc(nn.Module):
-    def __init__(self, vgg_name, config, w=1, init_weights=True):
+    def __init__(self, vgg_name, num_classes, w=1, init_weights=True):
         super(VGG11_nofc, self).__init__()
         self.w = w
-        self.num_classes = dataset_num_classes.get(config['dataset'], 10)
+        self.num_classes = num_classes
         print("the number of classes", self.num_classes)
         self.features = self._make_layers(cfg[vgg_name]["layers"])
         self.classifier = nn.Linear(self.w * 512, self.num_classes)

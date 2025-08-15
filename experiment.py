@@ -290,15 +290,6 @@ def train_naive_permuted(seed,k, config):
     )
     print(f"B_naive: {results['B_naive'][0]:.2f}%, {results['B_naive'][1]:.4f}")
     ###############################################################################################################################################
-    
-    ################################################## Sparse training: Permuted solution = W_B^{k=i} ⊙ π(M_A) ####################################
-    model_B_dense_init_perm = VGG11_nofc("VGG11", init_weights=config["init_weights"]).to(config["device"])
-    model_B_dense_init_perm.load_state_dict(torch.load(load_path_rewound_point_B_k))
-    ### Ensure this gives the same evaluation as the rewound point from above. ###
-    results["model_b_init_perm_eval"] = evaluate(
-        model_B_dense_init_perm, cifar_dataloader(config["batch_size"])[1], config["device"]
-    )
-    print(f"model_b_init_perm_eval: {results['model_b_init_perm_eval'][0]:.2f}%, {results['model_b_init_perm_eval'][1]:.4f}")
 
     ################################################# Sparse training: Permuted solution = W_B^{t=k} ⊙ π(M_A) ####################################
     model_B_dense_init_perm = get_model(config)

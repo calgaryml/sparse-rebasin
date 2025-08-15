@@ -302,7 +302,8 @@ def check_hooks(model):
     
 def get_model(config):
     if config["model_type"] == "VGG11":
-        return VGG11_nofc("VGG11", config, init_weights=config["init_weights"]).to(config["device"])
+        num_classes = dataset_num_classes.get(config['dataset'], 10)
+        return VGG11_nofc("VGG11", num_classes, init_weights=config["init_weights"]).to(config["device"])
     elif config["model_type"] == "ResNet":
         return ResNet(BasicBlock, [3, 3, 3], config, w=config["width_multiplier"]).to(config["device"])
     elif config["model_type"] == "ResNet50":

@@ -28,13 +28,13 @@ def cifar_dataloader(batch_size, config, slurm_tmpdir):
         train_ds = datasets.CIFAR10(
             root=dataset_root,
             train=True,
-            download=False,
+            download=True,
             transform=train_transform,
         )
         test_ds = datasets.CIFAR10(
             root=dataset_root,
             train=False,
-            download=False,
+            download=True,
             transform=test_transform,
         )
     elif dataset == "cifar100":
@@ -57,13 +57,13 @@ def cifar_dataloader(batch_size, config, slurm_tmpdir):
         train_ds = datasets.CIFAR100(
             root=dataset_root,
             train=True,
-            download=False,
+            download=True,
             transform=train_transform,
         )
         test_ds = datasets.CIFAR100(
             root=dataset_root,
             train=False,
-            download=False,
+            download=True,
             transform=test_transform,
         )
         
